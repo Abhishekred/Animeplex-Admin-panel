@@ -6,11 +6,11 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// 🔐 CONFIG
-const BOT_TOKEN = "8272539016:AAH_rzqcDH2PX3mJnVoIWDTbUA-tDENM8Eo";
-const CHAT_ID = "8272539016";
+// 🔐 ENV VARIABLES
+const BOT_TOKEN = process.env.BOT_TOKEN;
+const CHAT_ID = process.env.CHAT_ID;
 
-// 🗄️ Railway MySQL (ENV variables use karo)
+// 🗄️ DB (Railway auto variables)
 const db = mysql.createConnection({
   host: process.env.MYSQLHOST,
   user: process.env.MYSQLUSER,
@@ -18,7 +18,7 @@ const db = mysql.createConnection({
   database: process.env.MYSQLDATABASE
 });
 
-// 🔧 Create table (auto)
+// Auto table create
 db.query(`
 CREATE TABLE IF NOT EXISTS requests (
  id INT AUTO_INCREMENT PRIMARY KEY,
@@ -33,6 +33,8 @@ CREATE TABLE IF NOT EXISTS requests (
 app.get("/", (req, res) => {
 
   db.query("SELECT * FROM requests ORDER BY id DESC", (err, rows) => {
+
+    if(err) return res.send("DB Error");
 
     let list = rows.map(r => `
       <div style="background:#222;padding:10px;margin:10px;border-radius:8px;">
@@ -90,6 +92,8 @@ app.post("/request", async (req, res) => {
     [type, name, title],
     async (err, result) => {
 
+      if(err) return res.send("DB Insert Error");
+
       let id = result.insertId;
 
       let msg = `🚀 New Request
@@ -103,9 +107,13 @@ Commands:
 /done ${id}
 /cancel ${id}`;
 
-      await axios.get(`https://api.telegram.org/bot${8272539016:AAH_rzqcDH2PX3mJnVoIWDTbUA-tDENM8Eo}/sendMessage`, {
-        params: { chat_id: 8272539016, text: msg }
-      });
+      try{
+        await axios.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+          params: { chat_id: CHAT_ID, text: msg }
+        });
+      }catch(e){
+        console.log("Telegram Error");
+      }
 
       res.redirect("/");
     }
@@ -114,6 +122,7 @@ Commands:
 
 // 🤖 TELEGRAM WEBHOOK
 app.post("/bot", (req, res) => {
+
   const msg = req.body.message?.text || "";
 
   let match;
@@ -133,5 +142,6 @@ app.post("/bot", (req, res) => {
   res.send("ok");
 });
 
-// 🚀 START
-app.listen(3000, () => console.log("🔥 Server Running"));
+// 🚀 START (IMPORTANT FIX)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log("🔥 Server Running on " + PORT));
