@@ -8,7 +8,7 @@ app.use(express.json());
 
 // 🔐 CONFIG
 const BOT_TOKEN = "8272539016:AAH_rzqcDH2PX3mJnVoIWDTbUA-tDENM8Eo";
-const CHAT_ID = "YOUR_CHAT_ID";
+const CHAT_ID = "8272539016";
 
 // 🗄️ Railway MySQL (ENV variables use karo)
 const db = mysql.createConnection({
@@ -103,8 +103,8 @@ Commands:
 /done ${id}
 /cancel ${id}`;
 
-      await axios.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        params: { chat_id: CHAT_ID, text: msg }
+      await axios.get(`https://api.telegram.org/bot${8272539016:AAH_rzqcDH2PX3mJnVoIWDTbUA-tDENM8Eo}/sendMessage`, {
+        params: { chat_id: 8272539016, text: msg }
       });
 
       res.redirect("/");
