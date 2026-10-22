@@ -1,0 +1,18 @@
+{
+  "functions": {
+    "api/release.js": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/release.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    }
+  ]
+}
