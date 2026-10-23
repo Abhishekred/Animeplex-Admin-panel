@@ -1,11 +1,11 @@
 {
   "app": "AnimePlex",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "versionCode": 206,
   "forceUpdate": false,
   "title": "AnimePlex update",
   "releaseNotes": "Initial update manifest. Add release notes in the admin dashboard.",
   "apkUrl": "",
-  "publishedAt": "",
-  "minimumVersion": "0.0.0"
+  "minimumVersion": "0.0.0",
+  "publishedAt": "2026-10-23T17:24:33.352Z"
 }
