@@ -47,6 +47,7 @@ module.exports = async function handler(req, res) {
   if (versionParts.length !== 3 || versionParts.some(part => part.length === 0 || !Number.isInteger(Number(part)) || Number(part) < 0)) return send(res, 400, { error:"Version must look like 5.2.2" });
   if (!Number.isInteger(versionCode) || versionCode < 1) return send(res, 400, { error:"Version code must be a positive integer." });
   if (apkUrl && !apkUrl.toLowerCase().startsWith("https://")) return send(res, 400, { error:"APK URL must use HTTPS." });
+  if (body.forceUpdate === true && !apkUrl) return send(res, 400, { error:"A forced update requires an HTTPS APK URL." });
 
   try {
     const url = `https://api.github.com/repos/${REPO}/contents/${FILE_PATH}`;
