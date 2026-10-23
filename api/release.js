@@ -64,7 +64,7 @@ module.exports = async function handler(req, res) {
       minimumVersion: String(body.minimumVersion || "0.0.0"),
       publishedAt: new Date().toISOString(),
     };
-    const payload = { message:`Publish AnimePlex ${version} release`, content:Buffer.from(JSON.stringify(manifest,null,2)+"\\n").toString("base64"), branch:BRANCH };
+    const payload = { message:`Publish AnimePlex ${version} release`, content:Buffer.from(JSON.stringify(manifest,null,2)+"\n").toString("base64"), branch:BRANCH };
     if (sha) payload.sha = sha;
     const write = await githubRequest(url, { method:"PUT", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload) });
     const result = await write.json();
