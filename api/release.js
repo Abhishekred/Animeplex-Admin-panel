@@ -48,6 +48,32 @@ module.exports = async function handler(req, res) {
   if (auth !== `Bearer ${secret}`) return send(res, 401, { error: "Unauthorized" });
 
   const body = req.body || {};
+
+  // Trigger the app repository's manual-only OTA workflow from the admin panel.
+  if (body.action === "publishOTA") {
+    const token = process.env.GH_PAT;
+    if (!token) return send(res, 503, { error: "Set GH_PAT in Vercel to a GitHub token with Actions: write and Contents: read access to Abhishekred/animeplex-upgrade." });
+    try {
+      const dispatchUrl = "https://api.github.com/repos/Abhishekred/animeplex-upgrade/actions/workflows/ota-update.yml/dispatches";
+      const dispatch = await fetch(dispatchUrl, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ref: "main" }),
+      });
+      if (dispatch.status !== 204) {
+        const details = await dispatch.text();
+        return send(res, 502, { error: `GitHub could not start the OTA workflow (HTTP ${dispatch.status}). ${details.slice(0, 500)}` });
+      }
+      return send(res, 200, { ok: true, message: "OTA workflow started. Check Actions in the animeplex-upgrade repository for progress." });
+    } catch (e) {
+      return send(res, 500, { error: e.message || "Could not trigger OTA workflow." });
+    }
+  }
   const version = String(body.version || "").trim();
   const versionCode = Number(body.versionCode);
   const apkUrl = String(body.apkUrl || "").trim();
