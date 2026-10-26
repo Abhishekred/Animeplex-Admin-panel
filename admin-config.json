@@ -1,0 +1,65 @@
+{
+  "app": "AnimePlex",
+  "updatedAt": null,
+  "general": {
+    "maintenanceMode": false,
+    "minimumAppVersion": "0.0.0",
+    "announcementEnabled": false,
+    "announcementTitle": "",
+    "announcementMessage": ""
+  },
+  "features": {
+    "watchParty": false,
+    "liveChat": false,
+    "downloads": true,
+    "cast": true,
+    "autoPlay": true,
+    "skipIntro": true,
+    "continueWatching": true,
+    "adultContent": false
+  },
+  "playback": {
+    "defaultAudio": "auto",
+    "defaultQuality": "auto",
+    "autoQuality": true,
+    "subtitlesEnabled": true,
+    "preferredSubtitle": "Hindi",
+    "playerControls": true
+  },
+  "providers": {
+    "enabled": true,
+    "defaultProvider": "MovieBox",
+    "priority": [
+      "MovieBox"
+    ],
+    "maintenanceMessage": ""
+  },
+  "notifications": {
+    "inApp": true,
+    "releaseAlerts": true,
+    "maintenanceAlerts": true,
+    "featureAlerts": true
+  },
+  "privacy": {
+    "analyticsEnabled": true,
+    "crashReports": true,
+    "showViewerNames": false
+  },
+  "limits": {
+    "maxWatchPartyMembers": 8,
+    "heartbeatSeconds": 20,
+    "sessionTimeoutSeconds": 90
+  },
+  "content": {
+    "movies": true,
+    "anime": true,
+    "tvSeries": true,
+    "webSeries": true,
+    "featuredEnabled": true
+  },
+  "security": {
+    "minimumSupportedVersion": "0.0.0",
+    "forceUpdate": false,
+    "blockedVersions": []
+  }
+}
