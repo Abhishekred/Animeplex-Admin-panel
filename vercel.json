@@ -8,6 +8,9 @@
     },
     "api/telemetry.js": {
       "maxDuration": 10
+    },
+    "api/config.js": {
+      "maxDuration": 10
     }
   },
   "headers": [
