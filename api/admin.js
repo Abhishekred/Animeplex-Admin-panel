@@ -38,7 +38,7 @@ module.exports = async function handler(req, res) {
     if (!currentResponse.ok) return send(res, 502, { error: "Could not read current config before saving." });
     const current = await currentResponse.json();
     const config = { ...body.config, app: "AnimePlex", updatedAt: new Date().toISOString() };
-    const payload = { message: "Update AnimePlex remote app settings", content: Buffer.from(JSON.stringify(config, null, 2) + "\\n").toString("base64"), branch: BRANCH, sha: current.sha };
+    const payload = { message: "Update AnimePlex remote app settings", content: Buffer.from(JSON.stringify(config, null, 2) + "\n").toString("base64"), branch: BRANCH, sha: current.sha };
     const write = await github(url, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
     const result = await write.json();
     if (!write.ok) return send(res, 502, { error: result.message || "GitHub could not save settings." });
