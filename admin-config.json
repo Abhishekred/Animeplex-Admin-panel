@@ -1,6 +1,6 @@
 {
   "app": "AnimePlex",
-  "updatedAt": "2026-10-28T13:46:37.337Z",
+  "updatedAt": "2026-10-28T13:48:16.108Z",
   "general": {
     "maintenanceMode": false,
     "minimumAppVersion": "5.3.0",
@@ -28,7 +28,7 @@
   },
   "providers": {
     "enabled": true,
-    "defaultProvider": "Auto",
+    "defaultProvider": "AnimePlex server 1",
     "priority": [
       "MovieBox"
     ],
