@@ -1,6 +1,6 @@
 {
   "app": "AnimePlex",
-  "updatedAt": "2026-10-28T18:36:46.968Z",
+  "updatedAt": "2026-10-28T18:42:15.708Z",
   "general": {
     "maintenanceMode": false,
     "minimumAppVersion": "5.3.0",
@@ -32,12 +32,6 @@
       "id": "shortcut-1793206370239",
       "label": "Movie ",
       "providerValue": "MovieBox",
-      "enabled": false
-    },
-    {
-      "id": "shortcut-1793206395257",
-      "label": "NEW PLATFORM",
-      "providerValue": "",
       "enabled": true
     }
   ],
