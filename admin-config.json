@@ -1,6 +1,6 @@
 {
   "app": "AnimePlex",
-  "updatedAt": "2026-10-28T19:36:54.681Z",
+  "updatedAt": "2026-10-28T19:39:16.183Z",
   "general": {
     "maintenanceMode": false,
     "minimumAppVersion": "5.3.0",
@@ -32,6 +32,24 @@
       "id": "shortcut-1793206370239",
       "label": "Movie ",
       "providerValue": "AnimePlex server 1",
+      "enabled": true
+    },
+    {
+      "id": "shortcut-1793216324994",
+      "label": "NEW PLATFORM",
+      "providerValue": "AnimePlex server 2",
+      "enabled": true
+    },
+    {
+      "id": "shortcut-1793216333446",
+      "label": "Anime",
+      "providerValue": "AnimePlex server 3",
+      "enabled": true
+    },
+    {
+      "id": "shortcut-1793216343674",
+      "label": "NEW PLA",
+      "providerValue": "Auto",
       "enabled": true
     }
   ],
