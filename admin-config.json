@@ -1,6 +1,6 @@
 {
   "app": "AnimePlex",
-  "updatedAt": "2026-10-28T13:48:16.108Z",
+  "updatedAt": "2026-10-28T15:06:48.853Z",
   "general": {
     "maintenanceMode": false,
     "minimumAppVersion": "5.3.0",
@@ -16,7 +16,8 @@
     "autoPlay": true,
     "skipIntro": true,
     "continueWatching": true,
-    "adultContent": false
+    "adultContent": false,
+    "hamburgerMenu": false
   },
   "playback": {
     "defaultAudio": "auto",
