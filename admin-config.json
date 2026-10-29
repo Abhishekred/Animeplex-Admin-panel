@@ -1,6 +1,6 @@
 {
   "app": "AnimePlex",
-  "updatedAt": "2026-10-28T19:39:16.183Z",
+  "updatedAt": "2026-10-29T18:05:25.125Z",
   "general": {
     "maintenanceMode": false,
     "minimumAppVersion": "5.3.0",
@@ -9,7 +9,7 @@
     "announcementMessage": "Hy"
   },
   "features": {
-    "hamburgerMenu": true,
+    "hamburgerMenu": false,
     "watchParty": false,
     "liveChat": false,
     "downloads": true,
@@ -31,25 +31,25 @@
     {
       "id": "shortcut-1793206370239",
       "label": "Movie ",
-      "providerValue": "AnimePlex server 1",
+      "providerValue": "4khdhub",
       "enabled": true
     },
     {
       "id": "shortcut-1793216324994",
-      "label": "NEW PLATFORM",
-      "providerValue": "AnimePlex server 2",
+      "label": "Anime",
+      "providerValue": "animeworld",
       "enabled": true
     },
     {
       "id": "shortcut-1793216333446",
-      "label": "Anime",
-      "providerValue": "AnimePlex server 3",
+      "label": "Mx player series",
+      "providerValue": "mxplayer",
       "enabled": true
     },
     {
       "id": "shortcut-1793216343674",
-      "label": "NEW PLA",
-      "providerValue": "Auto",
+      "label": "Prime video",
+      "providerValue": "primeMirror",
       "enabled": true
     }
   ],
