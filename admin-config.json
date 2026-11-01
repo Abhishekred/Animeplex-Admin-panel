@@ -1,6 +1,6 @@
 {
   "app": "AnimePlex",
-  "updatedAt": "2026-11-01T07:51:32.739Z",
+  "updatedAt": "2026-11-01T13:51:04.262Z",
   "general": {
     "maintenanceMode": false,
     "minimumAppVersion": "5.3.0",
@@ -88,5 +88,17 @@
     "minimumSupportedVersion": "0.0.0",
     "forceUpdate": true,
     "blockedVersions": []
+  },
+  "navigationBar": {
+    "enabled": true,
+    "backgroundColor": "#171717",
+    "activePillColor": "#777777",
+    "activeIconColor": "#FFFFFF",
+    "inactiveIconColor": "#BDBDBD",
+    "textColor": "#FFFFFF",
+    "inactiveTextColor": "#BDBDBD",
+    "fontFamily": "",
+    "fontSize": 12,
+    "fontWeight": "400"
   }
 }
