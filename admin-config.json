@@ -100,5 +100,13 @@
     "fontFamily": "",
     "fontSize": 12,
     "fontWeight": "400"
+  },
+  "platformStyle": {
+    "backgroundColor": "#E11D48",
+    "borderColor": "#FFFFFF",
+    "textColor": "#FFFFFF",
+    "fontFamily": "",
+    "fontSize": 15,
+    "fontWeight": "900"
   }
 }
