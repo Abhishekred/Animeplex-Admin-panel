@@ -1,8 +1,8 @@
 {
   "app": "AnimePlex",
-  "updatedAt": "2026-11-06T19:41:21.284Z",
+  "updatedAt": "2026-11-06T19:45:34.359Z",
   "general": {
-    "maintenanceMode": false,
+    "maintenanceMode": true,
     "minimumAppVersion": "5.3.0",
     "announcementEnabled": false,
     "announcementTitle": "Hy",
